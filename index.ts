@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-const config: Config = require("config.json");
+const config: Config = require("~/config/config.json");
 const rcon: any = require("rcon");
 import { exec } from "child_process";
 
