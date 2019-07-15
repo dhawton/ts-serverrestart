@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-const config: Config = require("~/config/config.json");
+const config: Config = require("config.json");
 const rcon: any = require("rcon");
 import { exec } from "child_process";
 
@@ -51,11 +51,13 @@ let start: boolean = argv[1] === "start" ? true : false;
 let now: boolean = argv.includes("now") ? true : false;
 const conns: StringMap = {};
 
-Object.keys(config.servers).map((v: string) => {
-  let s = config.servers[v];
-  conns[s.name] = new rcon(s.hostname, s.port, s.password, { tcp: true });
-  conns[s.name].connect();
-});
+if (shutdown || restart) {
+  Object.keys(config.servers).map((v: string) => {
+    let s = config.servers[v];
+    conns[s.name] = new rcon(s.hostname, s.port, s.password, { tcp: true });
+    conns[s.name].connect();
+  });
+}
 
 let timeLeft = !now ? 0 : 3 * 60;
 
