@@ -1,0 +1,24 @@
+{
+  "name": "server-restart",
+  "version": "1.0.0",
+  "description": "Background processing for manually initiated FX Server shutdowns, restarts and startups.",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^12.6.2",
+    "rcon": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhawton/ts-serverrestart.git"
+  },
+  "author": "Daniel A. Hawton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dhawton/ts-serverrestart/issues"
+  },
+  "homepage": "https://github.com/dhawton/ts-serverrestart#readme"
+}
