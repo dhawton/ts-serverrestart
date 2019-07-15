@@ -59,7 +59,7 @@ if (shutdown || restart) {
   });
 }
 
-let timeLeft = !now ? 0 : 3 * 60;
+let timeLeft = now ? 0 : 3 * 60;
 
 const procShutdown = () => {
   if (timeLeft > 0) {
