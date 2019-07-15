@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-const config: Config = require("config.json");
+const config: Config = require("./config.json");
 const rcon: any = require("rcon");
 import { exec } from "child_process";
 
@@ -45,9 +45,9 @@ interface Server {
 }
 
 const argv = process.argv.slice(2);
-let shutdown: boolean = argv[1] === "shutdown" ? true : false;
-let restart: boolean = argv[1] === "restart" ? true : false;
-let start: boolean = argv[1] === "start" ? true : false;
+let shutdown: boolean = argv[0] === "shutdown" ? true : false;
+let restart: boolean = argv[0] === "restart" ? true : false;
+let start: boolean = argv[0] === "start" ? true : false;
 let now: boolean = argv.includes("now") ? true : false;
 const conns: StringMap = {};
 
