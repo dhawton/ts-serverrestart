@@ -54,7 +54,10 @@ const conns: StringMap = {};
 if (shutdown || restart) {
   Object.keys(config.servers).map((v: string) => {
     let s = config.servers[v];
-    conns[s.name] = new rcon(s.hostname, s.port, s.password, { tcp: true });
+    conns[s.name] = new rcon(s.hostname, s.port, s.password, {
+      tcp: false,
+      challenge: false
+    });
     conns[s.name].connect();
   });
 }
